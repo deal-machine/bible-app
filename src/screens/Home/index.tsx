@@ -1,25 +1,18 @@
-import { View, SafeAreaView, FlatList, Text } from "react-native";
+// import { View, SafeAreaView, FlatList, Text } from "react-native";
+
+import { Book } from "../../components/Book";
 
 import _bible from "../../base/bible.json";
-import { Book } from "../../types/Book";
-import { styles } from "./styles";
+import { IBook } from "../../types/Book";
+// import { styles } from "./styles";
 
 export function Home() {
-  const bible = _bible as Book[];
+  // const bible = _bible as IBook[];
   return (
-    <SafeAreaView style={styles.container}>
-      <FlatList
-        data={bible}
-        keyExtractor={(book) => book.abbrev}
-        numColumns={3}
-        renderItem={({ item }) => {
-          return (
-            <View style={styles.item}>
-              <Text style={styles.text}>{item.abbrev}</Text>
-            </View>
-          );
-        }}
-      />
-    </SafeAreaView>
+    <>
+      <Book />
+      <Book />
+      <Book />
+    </>
   );
 }
