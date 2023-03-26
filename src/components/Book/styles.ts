@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
   title: {
     flex: 1,
     fontSize: 16,
-    color: "#131015",
+    color: "#fff",
     marginLeft: 16,
   },
 

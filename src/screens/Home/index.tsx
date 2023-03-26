@@ -1,21 +1,29 @@
-// import { View, SafeAreaView, FlatList, Text } from "react-native";
-
 import { Book } from "../../components/Book";
 
 import _bible from "../../base/bible.json";
 import { IBook } from "../../types/Book";
-// import { styles } from "./styles";
+import { styles } from "./styles";
+import { ScrollView, View } from "react-native";
 
 export function Home() {
   function handleBookReading(title: string) {
     console.log(`Reading book ${title} successfully`);
   }
-  // const bible = _bible as IBook[];
+
+  const bible = _bible as IBook[];
   return (
-    <>
-      {/* <Book title="A" makeIsReading={() => handleBookReading("A")} /> */}
-      <Book title="B" makeIsReading={() => handleBookReading("B")} />
-      <Book title="C" makeIsReading={() => handleBookReading("C")} />
-    </>
+    <View style={styles.container}>
+      <View style={styles.list}>
+        <ScrollView>
+          {bible.map((book) => (
+            <Book
+              key={book.abbrev}
+              book={book}
+              makeIsReading={() => handleBookReading(book.name)}
+            />
+          ))}
+        </ScrollView>
+      </View>
+    </View>
   );
 }
