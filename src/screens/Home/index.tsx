@@ -3,7 +3,7 @@ import { Book } from "../../components/Book";
 import _bible from "../../base/bible.json";
 import { IBook } from "../../types/Book";
 import { styles } from "./styles";
-import { ScrollView, View } from "react-native";
+import { View, FlatList } from "react-native";
 
 export function Home() {
   function handleBookReading(title: string) {
@@ -14,15 +14,18 @@ export function Home() {
   return (
     <View style={styles.container}>
       <View style={styles.list}>
-        <ScrollView>
-          {bible.map((book) => (
+        <FlatList
+          data={bible}
+          keyExtractor={(item) => item.abbrev}
+          renderItem={({ item }) => (
             <Book
-              key={book.abbrev}
-              book={book}
-              makeIsReading={() => handleBookReading(book.name)}
+              book={item}
+              key={item.abbrev}
+              makeIsReading={() => handleBookReading(item.name)}
             />
-          ))}
-        </ScrollView>
+          )}
+          showsVerticalScrollIndicator={false}
+        />
       </View>
     </View>
   );
