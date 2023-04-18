@@ -5,7 +5,7 @@ import { IBook } from "../../types/Book";
 import { styles } from "./styles";
 import { View, FlatList } from "react-native";
 
-export function Home() {
+export function Bible() {
   function handleBookReading(title: string) {
     console.log(`Reading book ${title} successfully`);
   }

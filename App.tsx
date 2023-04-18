@@ -1,5 +1,6 @@
 import { StatusBar } from "react-native";
-import { Home } from "./src/screens/Home";
+import { Bible } from "./src/screens/Bible";
+import { Chapters } from "./src/screens/Chapters";
 
 export default function App() {
   return (
@@ -9,7 +10,7 @@ export default function App() {
         translucent
         backgroundColor="transparent"
       />
-      <Home />
+      <Chapters abbrev={"lv"} />
     </>
   );
 }

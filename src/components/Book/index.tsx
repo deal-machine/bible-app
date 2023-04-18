@@ -16,5 +16,5 @@ export function Book({ book, makeIsReading }: Props) {
         <Text style={styles.buttonText}>{">"}</Text>
       </TouchableOpacity>
     </View>
-  );
+  ); 
 }
