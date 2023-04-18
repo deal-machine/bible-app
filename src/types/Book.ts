@@ -1,7 +1,5 @@
-import { IChapter } from "./Chapter";
-
 export interface IBook {
   abbrev: string;
-  chapters: IChapter[];
+  chapters: any;
   name: string;
 }

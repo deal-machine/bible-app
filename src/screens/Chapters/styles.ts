@@ -7,6 +7,11 @@ export const styles = StyleSheet.create({
     paddingTop: 26,
     paddingHorizontal: 14,
   },
+  title: {
+    fontSize: 20,
+    color: "#ffffff",
+    padding: 14,
+  },
   list: {
     width: "100%",
     marginTop: 16,

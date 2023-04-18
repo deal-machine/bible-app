@@ -1,28 +1,16 @@
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
-import { IChapter } from "../../types/Chapter";
+import { View, Text, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
-import { Verses } from "../../screens/Verses";
 
 interface Props {
-  chapters: IChapter[];
-  title: string;
+  chapter: string[];
+  numberOf: number;
 }
-export function Chapter({ chapters, title }: Props) {
-  console.log(chapters[0]);
-
+export function Chapter({ chapter, numberOf }: Props) {
   return (
     <View style={styles.container}>
-      {/* <Text style={styles.title}>{title}</Text> */}
-
-      <ScrollView>
-        <Text style={styles.number}>{title}</Text>
-        {chapters.map((chapter, index) => (
-          <View key={index}>
-            <Text style={styles.number}>{index + 1}</Text>
-            <Text style={styles.text}>{chapter}</Text>
-          </View>
-        ))}
-      </ScrollView>
+      <TouchableOpacity>
+        <Text style={styles.buttonText}>{numberOf}</Text>
+      </TouchableOpacity>
     </View>
   );
 }
