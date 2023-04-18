@@ -9,23 +9,15 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 10,
   },
-  title: {
-    flex: 1,
+  number: {
+    flex: 2,
     fontSize: 16,
     color: "#fff",
     marginLeft: 16,
   },
-
-  button: {
-    width: 56,
-    height: 56,
-    borderRadius: 5,
-    backgroundColor: "#11C7",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  buttonText: {
-    color: "#FFF",
-    fontSize: 24,
+  text: {
+    flex: 2,
+    fontSize: 12,
+    color: "#889999",
   },
 });

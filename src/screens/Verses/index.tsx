@@ -4,19 +4,19 @@ import _bible from "../../base/bible.json";
 import { styles } from "./styles";
 import { Chapter } from "../../components/Chapter";
 
-export function Chapters({ abbrev }: { abbrev: string }) {
-  const bible = _bible as IBook[];
-
-  const book = bible.find((value) => value.abbrev === abbrev) as IBook;
-
+export function Verses({ verses }: { verses: string[] }) {
   return (
     <View style={styles.container}>
       <View style={styles.list}>
         <FlatList
-          data={book.chapters}
-          keyExtractor={() => book.abbrev}
+          data={verses}
+          keyExtractor={(item) => String(item.length)}
           renderItem={({ item }) => (
-            <Chapter title={book.name} key={book.abbrev} chapters={item} />
+            <Verse
+              title={item.name}
+              key={item.abbrev}
+              chapters={item.chapters}
+            />
           )}
         />
       </View>
